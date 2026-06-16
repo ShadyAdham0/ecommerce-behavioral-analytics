@@ -95,3 +95,20 @@ The enrichment pipeline does not use hard-coded cutoffs. Instead:
 | `pair_freq_cutoff_p75` | 75th-pct frequency cutoff used |
 
 ## Project Structure
+.
+├── task1_1_market_basket.py       # Phase 1 — item co-occurrence MapReduce
+├── task1_2_user_affinity.py       # Phase 1 — user affinity aggregation
+├── task1_2_association_rules.py   # Phase 1 — association rules (support, confidence, lift)
+├── task2_ingestion.py             # Phase 2 — MongoDB ingestion
+├── task3_enrichment.py            # Phase 3 — cart abandonment enrichment
+├── query_demo.py                  # Query demo (user + item lookup)
+├── spark_win_setup.py             # Windows Hadoop path helper
+├── README.md
+├── .gitignore
+└── data/
+    ├── ecommerce_logs.csv         # Raw input (not committed — too large)
+    └── output/
+        ├── co_occurrence_pairs/   # Task 1.1 output (part*.csv)
+        ├── user_affinity_aggregation/  # Task 1.2 output (part*.csv)
+        ├── association_rules/     # Task 1.2b output (part*.csv)
+        └── enriched_abandonment/  # Task 3 output (part*.csv)
