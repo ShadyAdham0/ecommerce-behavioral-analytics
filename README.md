@@ -1,6 +1,12 @@
 # E-Commerce Behavioral Analytics & Recommendation Engine
 
 End-to-end big data pipeline — Spark MapReduce, MongoDB, and cart-abandonment enrichment for e-commerce behavioral analytics.
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-3.x-E25A1C?style=flat&logo=apachespark&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-6.x-47A248?style=flat&logo=mongodb&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-MapReduce-E25A1C?style=flat&logo=apachespark&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat)
 
 ## Pipeline Overview
 ## Phases
