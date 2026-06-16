@@ -1,8 +1,6 @@
 # E-Commerce Behavioral Analytics & Recommendation Engine
 
-End-to-end data engineering pipeline that processes raw e-commerce logs at scale
-using Apache Spark, stores behavioral profiles in MongoDB, and generates targeted
-marketing campaign flags for cart-abandonment recovery.
+End-to-end big data pipeline — Spark MapReduce, MongoDB, and cart-abandonment enrichment for e-commerce behavioral analytics.
 
 ## Pipeline Overview
 ## Phases
@@ -77,9 +75,10 @@ All scripts accept CLI arguments and respect environment variables:
 
 ## Data-Driven Thresholds (Phase 3)
 
-The enrichment pipeline does **not** use hard-coded cutoffs. Instead:
-- **Category match**: a user's "top" categories are those with rank ≤ `TOP_RANK_CUTOFF` (computed by Task 1.2)
-- **Pair frequency cutoff**: dynamically computed as the **75th percentile** of all co-occurrence frequencies in MongoDB — adapts to the actual data distribution
+The enrichment pipeline does not use hard-coded cutoffs. Instead:
+
+- **Category match** — a user's "top" categories are those with rank ≤ `TOP_RANK_CUTOFF` (computed by Task 1.2)
+- **Pair frequency cutoff** — dynamically computed as the 75th percentile of all co-occurrence frequencies in MongoDB; adapts to the actual data distribution
 
 ## Output Schema
 
@@ -96,4 +95,3 @@ The enrichment pipeline does **not** use hard-coded cutoffs. Instead:
 | `pair_freq_cutoff_p75` | 75th-pct frequency cutoff used |
 
 ## Project Structure
-## .gitignore
