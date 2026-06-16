@@ -9,6 +9,33 @@ End-to-end big data pipeline — Spark MapReduce, MongoDB, and cart-abandonment 
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat)
 
 ## Pipeline Overview
+```
+Raw Logs (CSV)
+      │
+      ▼
+┌─────────────────────────────┐
+│  Phase 1 · Spark MapReduce  │
+│  ├─ Task 1.1 Market Basket  │
+│  ├─ Task 1.2 User Affinity  │
+│  └─ Task 1.2 Assoc. Rules   │
+└─────────────┬───────────────┘
+              │  part*.csv
+              ▼
+┌─────────────────────────────┐
+│  Phase 2 · MongoDB          │
+│  ├─ co_occurrence           │
+│  └─ user_affinity           │
+└─────────────┬───────────────┘
+              │  NoSQL lookup
+              ▼
+┌─────────────────────────────┐
+│  Phase 3 · Enrichment       │
+│  └─ Cart Abandonment Join   │
+└─────────────┬───────────────┘
+              │
+              ▼
+   High_Discount · Standard_Reminder
+```
 ## Phases
 
 ### Phase 1 — Distributed Processing (Spark MapReduce)
